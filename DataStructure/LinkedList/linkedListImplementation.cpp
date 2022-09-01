@@ -80,6 +80,65 @@ Node* insertViaHead(Node *head, int num) {
 	return head;
 }
 
+void removeEl(Node *head, int num){
+	Node *temp = head;
+	while(head != NULL){
+		if(head->next->data == num){
+			temp = head->next;
+			head->next = head->next->next;
+			// cout << "temp : " << temp->data << endl;
+			// cout << "head->next : " << head->data << endl;
+			delete(temp);
+			break;
+		}
+		head = head->next;
+	}
+}
+
+bool Search(Node *head, int val){
+	while(head != NULL){
+		if(head->data == val)	return true;
+	}
+	return false;
+}
+
+int nthTerm(Node *head, int n){
+	while(head != NULL && n-1 != 0){
+		head = head->next;
+		n--;
+	}
+	return (head != NULL)?head->data:-1;
+}
+
+void printReverse(Node *head){
+	if(head == NULL)
+		return;
+	printReverse(head->next);
+	cout << head->data << " ";
+}
+
+void nthFromLast(Node *head, int n){
+	static int count = 0;
+	if(head == NULL)
+		return;
+	nthFromLast(head->next, n);
+	if(++count == n){
+		cout << head->data << endl;
+	}
+}
+
+void reverseLinkedList(Node *head){
+	Node *current = head;
+	Node *prev = NULL;
+	Node *next = new Node;
+	while(current != NULL){
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+}
+
 int main() {
 	Node *head = new Node;
 	Node *middle = new Node;
@@ -109,5 +168,16 @@ int main() {
 	refrenceInsertEnd(head, 54);
 	cout << endl;
 	traverse(head);
-	cout << "last is : "<< last->data;
+	cout << endl;
+	// we are not updating the last Node in the main function
+	removeEl(head, 85);
+	traverse(head);
+	cout << endl;
+	cout << Search(head, 69) << endl;
+	cout << nthTerm(head, 3) << endl;
+	printReverse(head);
+	cout << endl;
+	nthFromLast(head, 1);
+	reverseLinkedList(head);
+	traverse(head);
 }
