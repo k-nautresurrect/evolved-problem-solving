@@ -6,6 +6,7 @@ evolve.js
 *.a
 *.o
 *.so
+stats/
 Ladder/CPP/stepOne/BasicIO
 DataStructure/LinkedList/linkedListImplementation
 Ladder/CPP/stepOne/Arrays_and_Strings
