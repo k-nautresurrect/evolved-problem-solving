@@ -5,22 +5,22 @@ using namespace std;
 class Node {
 public:
 	int data;
-	Node *next; // adress next object of Node
-
-	Node(int data){
-		this->data = data;
-	}
+	Node *next;
 };
 
 int main() {
-	Node *head;
+	Node *head = new Node;
+	Node *prev = new Node;
 	head->data = 0;
+	prev->data = 87;
+	head->next = prev;
+
 	for(int i = 1; i < 5; i++){
-		Node *temp;
 		int data; cin >> data;
+		Node *temp = new Node;
 		temp->data = data;
 		temp->next = NULL;
-		head->next = temp;
-		head = temp->next;
+		prev->next = temp;
+		prev = prev->next;
 	}
 }
