@@ -36,7 +36,7 @@ DataStructure/LinkedList/exampleLinkedList
 DataStructure/linkedList_prob/detectCycle
 DataStructure/linkedList_prob/ques1
 DataStructure/linkedList_prob/ques2
-Ladder/CPP/stepOne/PatternProb22DSA/Arrays/checkSorted
+Ladder/CPP/stepOne/PatternProb22
 DSA/Arrays/CPP/leadersInArray
 DSA/Arrays/CPP/leftRotate
 DSA/Arrays/CPP/leftRotateByOne
@@ -45,6 +45,8 @@ DSA/Arrays/CPP/moveZerosToEnd
 DSA/Arrays/CPP/moveZerosToFront
 DSA/Arrays/CPP/removeDuplicate
 DSA/Arrays/CPP/reverseArray
-DSA/Arrays/maxElement
-DSA/Arrays/secondMaxElement
 timer.sh
+DSA/Arrays/CPP/checkSorted
+DSA/Arrays/CPP/maxElement
+DSA/Arrays/CPP/secondMaxElement
+removeExec.sh
