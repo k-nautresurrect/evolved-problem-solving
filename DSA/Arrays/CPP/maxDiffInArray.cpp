@@ -31,12 +31,23 @@ public:
 		}
 		return arr[maxIdx] - arr[minIdx];
 	}
+
+	int optimize2(int arr[], int n){
+		int minVal = arr[0];
+		int maxDiff = 0;
+		for(int pos = 0; pos < n; pos++){
+			maxDiff = max(maxDiff, arr[pos] - minVal);
+			minVal = min(minVal, arr[pos]);
+		}
+		return maxDiff;
+	}
 };
 
 int main() {
-	int arr[]{2,3,0,6,4,8,1};
+	int arr[]{34, 8, 10, 3, 2, 80, 30, 33, 1};
 	int n = sizeof(arr)/sizeof(arr[0]);
 	Solution solve;
 	cout << solve.maxDifference(arr, n) << endl;
 	cout << solve.optimize1(arr, n) << endl;
+	cout << solve.optimize2(arr, n) << endl;
 }
