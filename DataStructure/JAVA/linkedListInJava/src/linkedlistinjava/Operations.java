@@ -56,4 +56,17 @@ public class Operations {
         }
         return false;
     }
+    
+    public static Node reverseList(Node head) {
+        Node current = head;
+        Node prev = null;
+        Node after;
+        while(current != null){
+            after = current.next;
+            current.next = prev;
+            prev = current;
+            current = after;
+        }
+        return prev;
+    }
 }

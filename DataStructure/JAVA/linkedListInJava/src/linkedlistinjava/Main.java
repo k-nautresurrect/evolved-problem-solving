@@ -24,6 +24,8 @@ public class Main {
         Node.removeElement(head, 10);
         StdOut.println();
         Node.traverse(head);
+        head = Node.reverseList(head);
+        Node.traverse(head);
     }
 }
 
